@@ -21,6 +21,7 @@ function pickComputerMove() {
 }
 
 
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
   let result = '';
@@ -61,11 +62,12 @@ function playGame(playerMove) {
   }
 
 
-  localStorage.setItem('score', JSON.stringify(score))
+  localStorage.setItem('score', JSON.stringify(score));
 
-  document.querySelector(".user-move").innerHTML = (`Your Move: ${playerMove}`)
-  document.querySelector(".computer-move").innerHTML = (`Computer Move: ${pickComputerMove()}`)
-  document.querySelector(".now-score").innerHTML = (`${result}`)
+  document.querySelector(".now-score").innerHTML = (`${result}`);
+  document.querySelector(".user-move").innerHTML = (`YOU: ${playerMove} CPU: ${computerMove}`);
+
+
   updateScore();
   totalScoreUpdate();
 }

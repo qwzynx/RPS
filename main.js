@@ -3,52 +3,54 @@ let score = JSON.parse(localStorage.getItem('score')) || {
   losses: 0, 
   ties: 0};
 
+updateScore();
+totalScoreUpdate();
+
 
 function pickComputerMove() {
-  const randomNumber = Math.random(); 
+  const randomNumber = Math.random();
 
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerMove = 'rock';
+    computerMove = 'Rock';
   } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = 'paper';
+    computerMove = 'Paper';
   } else if (randomNumber >= 2 / 3 && randomNumber < 3 / 3) {
-    computerMove = 'scissors'
+    computerMove = 'Scissors'
   }
-
   return computerMove;
 }
+
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
   let result = '';
   
-  if (playerMove === 'scissors') {
-    if (computerMove === 'rock') {
+  if (playerMove === 'Scissors') {
+    if (computerMove === 'Rock') {
       result = 'You lost';
-    } else if (computerMove === 'paper') {
+    } else if (computerMove === 'Paper') {
       result = 'You won'
-    } else if (computerMove === 'scissors') {
+    } else if (computerMove === 'Scissors') {
       result = 'Tie'
     }
-
-  } else if (playerMove === 'paper') {
-      if (computerMove === 'rock') {
+  } else if (playerMove === 'Paper') {
+      if (computerMove === 'Rock') {
       result = 'You won';
-    } else if (computerMove === 'paper') {
+    } else if (computerMove === 'Paper') {
       result = 'Tie'
-    } else if (computerMove === 'scissors') {
+    } else if (computerMove === 'Scissors') {
       result = 'You lost'
     }
-    
-  } else if (playerMove === 'rock') {
-      if (computerMove === 'rock') {
+  } else if (playerMove === 'Rock') {
+      if (computerMove === 'Rock') {
       result = 'Tie';
-    } else if (computerMove === 'paper') {
+    } else if (computerMove === 'Paper') {
       result = 'You lost'
-    } else if (computerMove === 'scissors') {
+    } else if (computerMove === 'Scissors') {
       result = 'You won'
     }
   }
+
 
   if (result === 'You won') {
     score.wins += 1;
@@ -58,18 +60,36 @@ function playGame(playerMove) {
     score.ties += 1;
   }
 
+
   localStorage.setItem('score', JSON.stringify(score))
 
-
-  alert(`you picked ${playerMove}, the computer chose ${computerMove} and ${result} 
-Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`) 
+  document.querySelector(".user-move").innerHTML = (`Your Move: ${playerMove}`)
+  document.querySelector(".computer-move").innerHTML = (`Computer Move: ${pickComputerMove()}`)
+  document.querySelector(".now-score").innerHTML = (`${result}`)
+  updateScore();
+  totalScoreUpdate();
 }
+
+
+
+
+
+function updateScore() {
+  document.querySelector('.text-score').innerHTML = (`Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`);
+}
+
+function totalScoreUpdate() {
+  totalScore = score.wins + score.losses
+  document.querySelector('.text-score1').innerHTML = (`Total Score: ${totalScore}`);
+}
+
+
 
 function reset() {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
   localStorage.removeItem('score');
-  alert(`Reseted: 
-Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`)
+  updateScore();
+  totalScoreUpdate();
 }

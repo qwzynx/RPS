@@ -1,92 +1,92 @@
 body {
   background-color: rgb(25, 21, 29);
 }
-.place {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 350px;
-  margin-bottom: 30px;
-}
-
-.reset-s-div {
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+#place {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+#place1 {
+  margin-top: 190px;
+  margin-bottom: 10px;
+}
+#place-scores {
+  margin-bottom: 10px;
+}
+#user{
+  margin-left: 10px;
+}
 
 
-
-
-.rock {
+.rps {
   background-color: white;
-  border: none;
-  height: 70px;
-  width: 100px;
+  border: white;
+  height: 80px;
+  width: 150px;
   font-size: xx-large;
   border-radius: 50px;
   cursor: pointer;
   transition: transform 1s cubic-bezier(0.03, 0.95, 0, 0.96);
 }
-.rock:hover {
+.rps:hover {
   transform: scale(1.1);
 }
-.rock:active {
+.rps:active {
   transition: transform none;
-  box-shadow: 10px 20px 500px 50px black;
+  box-shadow: 1px 1px 200px 50px black;
+}
+#scissors {
+  margin-left: 9px;
+}
+#paper {
+  margin-left: 9px;
 }
 
-.paper {
+
+.scores {
+  font-family: 'Orbitron', sans-serif;
   background-color: white;
+  font-weight: bold;
   border: none;
   height: 70px;
-  width: 100px;
-  font-size: xx-large;
+  width: 500px;
+  font-size: 20px;
   border-radius: 50px;
-  margin-left: 9px;
-  cursor: pointer;  
-  transition: transform 1s cubic-bezier(0.03, 0.95, 0, 0.96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.paper:hover {
-  transform: scale(1.1);
-}
-.paper:active {
-  transition: transform none;
-  box-shadow: 10px 20px 500px 50px black;
-}
-
-
-.scissors {
-  background-color: white;
-  border: none;
+#scores1 {
   height: 70px;
-  width: 100px;
-  font-size: xx-large;
+  width: 250px;
   border-radius: 50px;
-  margin-left: 9px;
-  cursor: pointer;  
-  box-shadow: none;
-  transition: transform 1s cubic-bezier(0.03, 0.95, 0, 0.96); 
-  transition: box-shadow 1s cubic-bezier(0.03, 0.95, 0, 0.96);
+  margin-left: 10px;
 }
-.scissors:hover {
-  transform: scale(1.1);
+#scores2 {
+  height: 70px;
+  width: 200px;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
-.scissors:active {
-  transition: transform none;
-  box-shadow: 10px 20px 500px 50px black;
-}
+
+
 
 .reset-s {
   background-color: white;
   border: none;
   height: 50px;
-  width: 150px;
+  width: 170px;
   font-weight: bold;
   font-size: 15px;
   border-radius: 50px;
-  margin-left: 9px;
+  font-family: 'Orbitron', sans-serif;
   cursor: pointer;  
+  margin: 0;
   box-shadow: none;
   transition: transform 1s cubic-bezier(0.03, 0.95, 0, 0.96); 
   transition: box-shadow 1s cubic-bezier(0.03, 0.95, 0, 0.96);
@@ -97,4 +97,10 @@ body {
 .reset-s:active {
   transition: transform none;
   box-shadow: 10px 20px 500px 50px black;
+}
+
+.copy {
+  font-family: 'Orbitron', sans-serif;
+  margin: 30px;
+  color: #ffffff;
 }

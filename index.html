@@ -3,28 +3,69 @@
   <head>
     <title>DM Rock-Paper-Scissors</title>
     <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="place">
-      
-      <button onclick="
-        playGame('rock');
-      " class="rock">✊🏿</button>
-      
-      <button onclick="
-        playGame('paper');
-      " class="paper">✋🏿</button>
-      
-      <button onclick="
-        playGame('scissors');
-      " class="scissors">✌🏿</button>
 
+    <div class="center" id="place1">
+      <div class="scores" id="user">
+        <p class="user-move"></p>
+      </div>
     </div>
-    <div class="reset-s-div">
+    <div class="center" id="place">      
+      <div class="scores">
+        <p class="computer-move"></p>
+      </div>
+    </div>
+
+    <div class="center" id="place-scores">
+      <div class="scores">
+        <p class="text-score"></p>
+      </div>
+    </div>
+
+    <div class="center" id="place-scores">
+      <div class="scores" id="scores1">
+        <p class="text-score1"></p>
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="scores" id="scores2">
+        <p class="now-score"></p>
+      </div>
+    </div>
+
+    <div class="center" id="place">
+      <button onclick="
+        playGame('Rock');
+      " class="rps">✊🏿</button>
+      
+      <button onclick="
+        playGame('Paper');
+      " class="rps" id="paper">✋🏿</button>
+      
+      <button onclick="
+        playGame('Scissors');
+      " class="rps" id="scissors">✌🏿</button>
+    </div>
+
+    <div class="center">
       <button class="reset-s" onclick="
         reset()
       ">RESET SCORE</button>
     </div>
+
     <script src="main.js"></script>
+
+    <p class="copy">
+      &copy; QWZYNX 2023
+    </p>
+
   </body>
 </html>

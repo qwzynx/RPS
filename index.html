@@ -7,12 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <header><h1 class="st-header">ZYNX RPS</h1></header>
 
-    <div class="center" id="place1">
+    <div class="center" id="place">
       <div class="scores" id="user">
         <p class="user-move"></p>
       </div>
@@ -50,17 +53,31 @@
       " class="rps" id="scissors">✌🏿</button>
     </div>
 
-    <div class="center">
+    <div class="center" id="place">
       <button class="reset-s" onclick="
         reset()
       ">RESET SCORE</button>
     </div>
 
-    <script src="main.js"></script>
+    <div class="center">
+        <div class="switch-btn">
+          <span class="icon dark-icon material-symbols-outlined">
+            dark_mode
+          </span>
+          <span class="icon light-icon material-symbols-outlined">
+            light_mode
+          </span>
+          <div class="circle-btn"></div>
+        </div>
+    </div>
 
-    <p class="copy">
-      &copy; QWZYNX 2023
-    </p>
+
+    <script src="main.js"></script>
+    <script src="dark-mode.js"></script>
+
+      <p class="copy">
+        &copy; QWZYNX 2023
+      </p>
 
   </body>
 </html>

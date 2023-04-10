@@ -1,6 +1,26 @@
-body {
-  background-color: rgb(25, 21, 29);
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+:root {
+  --bg: rgb(224, 211, 211);
+  --main-color: rgb(25, 21, 29);
+  --switch-btn-bg: linear-gradient(50deg, black, rgb(44, 42, 37), rgb(241, 170, 15));
+  --circle-btn-bg: whitesmoke;
+  --trans-timing: cubic-bezier(0.03, 0.95, 0, 0.96);
+}
+.dark:root {
+  --bg: rgb(25, 21, 29);
+  --main-color: white;
+}
+body {
+  background-color: var(--bg);
+  height: 100vh;
+  transition: background-color .3s ease, color .3s ease;
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -9,10 +29,6 @@ body {
 #place {
   margin-top: 0px;
   margin-bottom: 20px;
-}
-#place1 {
-  margin-top: 190px;
-  margin-bottom: 10px;
 }
 #place-scores {
   margin-bottom: 10px;
@@ -23,14 +39,15 @@ body {
 
 
 .rps {
-  background-color: white;
-  border: white;
+  background-color: var(--main-color);
   height: 80px;
   width: 150px;
   font-size: xx-large;
   border-radius: 50px;
   cursor: pointer;
-  transition: transform 1s cubic-bezier(0.03, 0.95, 0, 0.96);
+  transition: transform 1s var(--trans-timing),
+    color .5s var(--trans-timing),
+    background-color .5s var(--trans-timing);
 }
 .rps:hover {
   transform: scale(1.1);
@@ -48,8 +65,9 @@ body {
 
 
 .scores {
+  color: var(--bg);
   font-family: 'Orbitron', sans-serif;
-  background-color: white;
+  background-color: var(--main-color);
   font-weight: bold;
   border: none;
   height: 70px;
@@ -59,6 +77,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color .5s var(--trans-timing),
+    background-color .5s var(--trans-timing);
 }
 #scores1 {
   height: 70px;
@@ -77,7 +97,8 @@ body {
 
 
 .reset-s {
-  background-color: white;
+  color: var(--bg);
+  background-color: var(--main-color);
   border: none;
   height: 50px;
   width: 170px;
@@ -88,8 +109,10 @@ body {
   cursor: pointer;  
   margin: 0;
   box-shadow: none;
-  transition: transform 1s cubic-bezier(0.03, 0.95, 0, 0.96); 
-  transition: box-shadow 1s cubic-bezier(0.03, 0.95, 0, 0.96);
+  transition: color .5s var(--trans-timing),
+    transform 1s var(--trans-timing), 
+    box-shadow 1s var(--trans-timing),
+    background-color .5s var(--trans-timing);
 }
 .reset-s:hover {
   transform: scale(1.1);
@@ -99,8 +122,72 @@ body {
   box-shadow: 10px 20px 500px 50px black;
 }
 
+.st-header {
+  color: var(--main-color);
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .copy {
   font-family: 'Orbitron', sans-serif;
   margin: 30px;
-  color: #ffffff;
+  color:var(--main-color);
+  transition: color .5s var(--trans-timing);
+}
+
+
+
+
+.switch-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-image: var(--switch-btn-bg);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.icon {
+  position: absolute;
+  color: #fff;
+  font-size: 38px !important;
+  transition: left .5s var(--trans-timing),
+    opacity .5s var(--trans-timing);
+}
+.dark-icon {
+  opacity: 0;
+  left: 70px;
+}
+.dark .dark-icon {
+  opacity: 1;
+  left: 10px;
+}
+.dark .light-icon {
+  opacity: 0;
+  left: 10px;
+}
+.light-icon {
+  opacity: 1;
+  left: 70px;
+}
+
+.circle-btn {
+  position: absolute;
+  height: 46px;
+  width: 46px;
+  background-color: var(--circle-btn-bg);
+  border-radius: 50%;
+  left: 6px;
+  transition: left .5s var(--trans-timing);
+}
+.dark .circle-btn {
+  left: 68px;
 }
